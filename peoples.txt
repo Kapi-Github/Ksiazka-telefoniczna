@@ -1,0 +1,4 @@
+1,Paweł,Wiencis,Polska,Rydułtowy,123123123,987978978,
+6,Sebastian,Saba,Polska,Rydułtowy,987987897,456456456,
+9,Kacper,Władarz,Polska,Czernica,123234534,
+11,Paweł,Leszko,Polska,Kokoszyce,4535335,56747856456,
