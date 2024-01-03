@@ -14,6 +14,11 @@ import java.util.Scanner;
  * @author kacper2p
  */
 class Person {
+    private String bookName;
+
+    public Person(String bookName){
+        this.bookName = bookName;
+    }
     Scanner value = new Scanner(System.in);
 
     void addPerson(){
@@ -43,7 +48,7 @@ class Person {
         }
 
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("peoples.txt", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(bookName + ".txt", true));
             writer.write(getId() + "," + name + "," + surname + "," + country + "," + city + "," + numbers + "\n");
             writer.close();
             setId(getId());
@@ -54,7 +59,7 @@ class Person {
 
     void removePerson(int toRemove){
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("peoples.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(bookName + ".txt"));
             List<String> data = new ArrayList<>();
             String line;
 
@@ -65,7 +70,7 @@ class Person {
             data.remove(toRemove - 1);
 
             try{
-                BufferedWriter writer = new BufferedWriter(new FileWriter("peoples.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter(bookName + ".txt"));
                 for(String ln : data){
                 writer.write(ln + "\n");
                 }
@@ -83,7 +88,7 @@ class Person {
 
     void editAll(int choose, int toEdit ){
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("peoples.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(bookName + ".txt"));
 
             List<List<String>> data = new ArrayList<>();
             String line;
@@ -184,7 +189,7 @@ class Person {
 
     void showPerson(){
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("peoples.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(bookName + ".txt"));
             String line;
             int lineNumber = 1;
 
@@ -200,7 +205,7 @@ class Person {
 
     void showAll(){
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("peoples.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(bookName + ".txt"));
             String line;
 
             while((line = reader.readLine()) != null){
@@ -234,7 +239,7 @@ class Person {
 
     void saveDataToFile(List<List<String>> data){
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("peoples.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(bookName + ".txt"));
             for(List<String> ln : data){
                 for(String contactData : ln){
                     writer.write(contactData + ",");
@@ -249,7 +254,7 @@ class Person {
 
     void setId(int current){
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("id.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(bookName + "ID.txt"));
             writer.write(Integer.toString(current + 1));
             writer.close();
         }catch(IOException error){
@@ -259,7 +264,7 @@ class Person {
 
     int getId(){
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("id.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(bookName + "ID.txt"));
             String line;
 
             if((line = reader.readLine()) != null){

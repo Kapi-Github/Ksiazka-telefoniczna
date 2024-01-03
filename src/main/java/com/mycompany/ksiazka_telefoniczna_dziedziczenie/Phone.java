@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Phone extends Person{
+    public Phone(String bookName){
+        super(bookName);
+    }
+
     void addPhone(){
         super.addPerson();
     }

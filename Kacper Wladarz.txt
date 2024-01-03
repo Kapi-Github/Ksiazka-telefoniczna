@@ -2,3 +2,4 @@
 6,Sebastian,Saba,Polska,Rydułtowy,987987897,456456456,
 9,Kacper,Władarz,Polska,Czernica,123234534,
 11,Paweł,Leszko,Polska,Kokoszyce,4535335,56747856456,
+12,Jakub,Zdrzałek,Polska,Radlin,23534536,578346578345,2394623742,
